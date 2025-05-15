@@ -1,18 +1,27 @@
- let count = 0;
-    let button = document.getElementById("btn");
-    let inputField = document.getElementById("input");
-    let container = document.getElementById("container");
+let count = 0;
+let button = document.getElementById("btn");
+let inputname = document.getElementById("input");
+let container = document.getElementById("container");
+let inputList = [];
 
-    button.addEventListener("click", () => {
-      let inputText = inputField.value.trim();
-      if (count < 5) {
-        let hulk = document.createElement("input");
-        hulk.placeholder="Enter your message "
-        hulk.textContent = inputText;
-        container.appendChild(hulk);
-        count++;
-        inputField.value = ""; 
-      } else {
-        alert("You have used all the inputs:5");
-      }
+
+inputname.addEventListener("input", () => {
+    let value = inputname.value;
+    inputList.forEach(input => {
+        input.value = value;
     });
+});
+
+button.addEventListener("click", () => {
+    if (count < 4) {
+        let Hulk = document.createElement("input");
+        Hulk.placeholder = "Enter your message";
+        Hulk.readOnly = true;
+        Hulk.value = inputname.value;
+        container.append(Hulk);
+        inputList.push(Hulk);
+        count++;
+    } else {
+        alert("You have used all input 5");
+    }
+});

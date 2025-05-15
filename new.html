@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+  
+  
+  
+  <input id="text" placeholder="Enter text here">
+
+ 
+  <input id="count"  placeholder="Enter number">
+
+  <select id="select">
+    <option value="">Select Elements</option>
+    <option value="span">Span</option>
+    <option value="textarea">Textarea</option>
+    <option value="p">Paragraph</option>
+    <option value="h1">Heading 1</option>
+    <option value="h2">Heading 2</option> 
+    <option value="h3">Heading 3</option>
+    <option value="h4">Heading 4</option>
+    <option value="h5">Heading 5</option> 
+    <option value="h6">Heading 6</option>
+    <option value="input">Input</option>
+  </select>
+
+  <div id="output"></div>
+
+  <script>
+    let select = document.getElementById("select");
+
+    select.addEventListener("change", () => {
+      let text = document.getElementById("text").value;
+      let count = document.getElementById("count").value;
+      let output = document.getElementById("output");
+      output.innerHTML = "";
+
+      if (select.value === "span") {
+        for (let i = 0; i < count; i++) {
+          output.innerHTML += "<span>" + text + " </span>";
+        }
+      }
+
+      else if (select.value === "h1") {
+        for (let i = 0; i < count; i++) {
+          output.innerHTML += "<h1>" + text + " </h1>";
+        }
+      }
+      else if (select.value === "h2") {
+        for (let i = 0; i < count; i++) {
+          output.innerHTML += "<h2>" + text + " </h2>";
+        }
+      }
+      else if (select.value === "h3") {
+        for (let i = 0; i < count; i++) {
+          output.innerHTML += "<h3>" + text + " </h3>";
+        }
+      }
+      else if (select.value === "h4") {
+        for (let i = 0; i < count; i++) {
+          output.innerHTML += "<h4>" + text + " </h4>";
+        }
+      }
+      else if (select.value === "h5") {
+        for (let i = 0; i < count; i++) {
+          output.innerHTML += "<h5>" + text + " </h5>";
+        }
+      }
+      else if (select.value === "h6") {
+        for (let i = 0; i < count; i++) {
+          output.innerHTML += "<h6>" + text + " </h6>";
+        }
+      }
+      else if (select.value === "p") {
+        for (let i = 0; i < count; i++) {
+          output.innerHTML += "<p>" + text + " </p>";
+        }
+      }
+      else if (select.value === "input") {
+        for (let i = 0; i < count; i++) {
+          output.innerHTML += "<input type='text' value='" + text + "' />";
+        }
+      }
+       else if (select.value === "p") {
+        for (let i = 0; i < count; i++) {
+          output.innerHTML += "<p>" + text + " </p>";
+        }
+      }
+
+
+      if (select.value === "textarea") {
+        let txt = "";
+        for (let i = 0; i < count; i++) {
+          txt += text + "\n";
+        }
+        output.innerHTML = "<textarea rows='5' cols='30'>" + txt + "</textarea>";
+      }
+    });
+  </script>
+
+
+
+</body>
+</html>
